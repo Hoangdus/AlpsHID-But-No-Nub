@@ -129,7 +129,7 @@ List of devices that match the ProductIDs above, found using http://linux-hardwa
 To build --
 ```
 git clone https://github.com/Hoangdus/AlpsHID-But-No-Nub.git
-cd AlpsHID
+cd AlpsHID-But-No-nub
 git submodule init && git submodule update
 ```
 
