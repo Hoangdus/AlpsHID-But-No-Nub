@@ -431,7 +431,8 @@ void AlpsHIDEventDriver::u1_raw_event(AbsoluteTime timestamp, IOMemoryDescriptor
             
             x = reportData.contact[i].x_hi << 8 | reportData.contact[i].x_lo;
             y = reportData.contact[i].y_hi << 8 | reportData.contact[i].y_lo;
-            z = reportData.contact[i].z & 0x7F;
+            z = (reportData.contact[i].z < 0x80 &&
+				 reportData.contact[i].z > 0) * 62;;
             bool contactValid = z;
             transducer->isValid = contactValid;
             transducer->timestamp = timestamp;
